@@ -1,4 +1,15 @@
-<h1>My list of Cocktail</h1>
-<% @cocktails.each do |cocktail| %>
-  <h2><%= cocktail.name %></h2>
-<% end %>
+<div class= "container-cocktail-index">
+    <h1>My list of Cocktail</h1>
+
+        <div class="cards"> 
+            <% @cocktails.each do |cocktail| %>
+                <div class="card-category">
+                    <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+                </div>
+            <% end %>       
+        </div>
+
+            <div class="btn-flat">
+                <%= link_to "Add a cocktail", new_cocktail_path%>
+            </div>
+</div>
